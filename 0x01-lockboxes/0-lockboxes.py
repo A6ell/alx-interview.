@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 '''
-this module does something
+this module determines if all boxes can be opened.
 '''
 
 
 def canUnlockAll(boxes):
     '''
-    this function also does something
+    this function uses a depth-first search algorithm and their keys.
     '''
     num_boxes = len(boxes)
     unlocked = [False] * num_boxes
