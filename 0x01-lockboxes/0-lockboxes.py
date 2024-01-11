@@ -1,21 +1,25 @@
+#!/usr/bin/python3
+'''
+this module does something
+'''
+
+
 def canUnlockAll(boxes):
-    """
-    Determine if all boxes can be opened.
+    '''
+    this function also does something
+    '''
+    num_boxes = len(boxes)
+    unlocked = [False] * num_boxes
+    unlocked[0] = True
 
-    Args:
-    - boxes (List[List[int]]): A list of lists representing locked boxes.
+    stack = [0]  # Start with the first box
 
-    Returns:
-    - bool: True if all boxes can be opened, else False.
-    """
-    if not boxes or type(boxes) is not list:
-        return False
+    while stack:
+        current_box = stack.pop()
 
-    unlocked = [0]
-    for n in unlocked:
-        for key in boxes[n]:
-            if key not in unlocked and key < len(boxes):
-                unlocked.append(key)
-    if len(unlocked) == len(boxes):
-        return True
-    return False
+        for key in boxes[current_box]:
+            if key < num_boxes and not unlocked[key]:
+                unlocked[key] = True
+                stack.append(key)
+
+    return all(unlocked)
