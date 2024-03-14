@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """Module for determining the winner of a prime game."""
 
+
 def isWinner(x, nums):
     """Determines the winner of a prime game session with `x` rounds.
 
     Args:
-        x (int): The number of rounds in the game.
-        nums (List[int]): A list of integers representing the values for each round.
+        The number of rounds in the game.
+        A list of integers representing the values for each round.
 
     Returns:
-        str or None: The winner of the game ('Maria' or 'Ben'), or None if it's a tie or invalid input.
+        winner ('Maria' or 'Ben'), or None if it's a tie or invalid input.
     """
     if x < 1 or not nums:
         return None
@@ -31,4 +32,3 @@ def isWinner(x, nums):
     if marias_wins == bens_wins:
         return None
     return 'Maria' if marias_wins > bens_wins else 'Ben'
-
